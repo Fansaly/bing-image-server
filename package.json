@@ -1,0 +1,40 @@
+{
+  "name": "bing-image-server",
+  "version": "1.0.0",
+  "private": true,
+  "author": "fansaly",
+  "description": "Bing's image server proxy",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix --cache src/*",
+    "build": "node scripts/build.js",
+    "start": "node scripts/start.js",
+    "deploy": "node scripts/deploy.js",
+    "predeploy": "npm run build"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "pm2": "^3.4.0",
+    "superagent": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "address": "^1.0.3",
+    "babel-eslint": "^10.0.1",
+    "chalk": "^2.4.2",
+    "cors": "^2.8.5",
+    "eslint": "^5.15.2",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "fs-extra": "^7.0.1",
+    "moment": "^2.24.0",
+    "nodemon": "^1.18.10"
+  }
+}
