@@ -23,7 +23,7 @@ const prepareUrls = (protocol, host, port) => {
     });
 
   const isUnspecifiedHost = host === '0.0.0.0' || host === '::';
-  let prettyHost, lanUrlForConfig, lanUrlForTerminal;
+  let prettyHost, lanUrlForConfig, lanUrlForTerminal, lanUrlForBrowser;
   if (isUnspecifiedHost) {
     prettyHost = 'localhost';
     try {
@@ -39,6 +39,7 @@ const prepareUrls = (protocol, host, port) => {
         ) {
           // Address is private, format it for later use
           lanUrlForTerminal = prettyPrintUrl(lanUrlForConfig);
+          lanUrlForBrowser = formatUrl(lanUrlForConfig);
         } else {
           // Address is not private, so we will discard it
           lanUrlForConfig = undefined;
@@ -50,15 +51,14 @@ const prepareUrls = (protocol, host, port) => {
   } else {
     prettyHost = host;
   }
-  const lanUrlForBrowser = formatUrl(lanUrlForConfig);
-  const localUrlForBrowser = formatUrl(prettyHost);
   const localUrlForTerminal = prettyPrintUrl(prettyHost);
+  const localUrlForBrowser = formatUrl(prettyHost);
   return {
     lanUrlForConfig,
-    lanUrlForBrowser,
     lanUrlForTerminal,
-    localUrlForBrowser,
+    lanUrlForBrowser,
     localUrlForTerminal,
+    localUrlForBrowser,
   };
 };
 
