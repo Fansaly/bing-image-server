@@ -52,10 +52,7 @@ app.get('/', (req, res, next) => {
   superagent
     .get(`${base}${route}`)
     .query({ ...query, idx, nc })
-    .on('end', () => {
-      const resTime = new Date();
-      log(reqTime, resTime);
-    })
+    .on('end', () => log(reqTime))
     .then((result, error) => {
       const data = result.body;
       const tips = data.tooltips.walls;
