@@ -87,5 +87,7 @@ module.exports = {
     'spaced-comment': [ERROR, 'always',  {
       'markers': ['global', 'eslint'],
     }],
+
+    'no-unused-vars': WARN,
   },
 };
