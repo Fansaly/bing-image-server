@@ -62,7 +62,8 @@ app.get('/', (req, res, next) => {
         url = `${base}${url}`;
       }
 
-      res.send({ tips, copyright, url });
+      const time = new Date().toISOString();
+      res.send({ tips, copyright, url, time });
     });
 });
 
